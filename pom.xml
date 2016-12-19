@@ -19,9 +19,15 @@
     <encoding>UTF-8</encoding>
     <scala.version>2.11.8</scala.version>
     <scala.compat.version>2.11</scala.compat.version>
-    <spark.version>1.6.3</spark.version>
+    <spark.version>2.0.1</spark.version>
   </properties>
-
+	<repositories>
+    <repository>
+        <id>spark-packages</id>
+        <name>spark-packages</name>
+        <url>http://dl.bintray.com/spark-packages/maven</url>
+    	</repository>
+	</repositories>
   <dependencies>
     <dependency>
       <groupId>org.scala-lang</groupId>
@@ -34,22 +40,49 @@
     	<version>${spark.version}</version>
     </dependency>
     <dependency>
-    	<groupId>org.apache.spark</groupId>
+    	<groupId>org.apache.bahir</groupId>
     	<artifactId>
     		spark-streaming-twitter_${scala.compat.version}
     	</artifactId>
-    	<version>1.6.3</version>
+    	<version>2.0.1</version>
     </dependency>
     <dependency>
     	<groupId>org.apache.spark</groupId>
     	<artifactId>spark-streaming_${scala.compat.version}</artifactId>
-    	<version>1.6.3</version>
+    	<version>2.0.1</version>
     </dependency>
     <dependency>
     	<groupId>com.googlecode.json-simple</groupId>
     	<artifactId>json-simple</artifactId>
     	<version>1.1.1</version>
     </dependency>
+    <dependency>
+    	<groupId>edu.stanford.nlp</groupId>
+    	<artifactId>stanford-corenlp</artifactId>
+    	<version>3.6.0</version>
+    </dependency>
+    <dependency>
+    <groupId>edu.stanford.nlp</groupId>
+    <artifactId>stanford-corenlp</artifactId>
+    <version>3.6.0</version>
+    <classifier>models</classifier>
+</dependency>
+    <dependency>
+    <groupId>databricks</groupId>
+    <artifactId>spark-corenlp</artifactId>
+    <version>0.2.0-s_2.11</version>
+    </dependency>
+    <dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-sql_2.11</artifactId>
+    <version>2.0.2</version>
+</dependency>
+<dependency>
+    <groupId>cloudant-labs</groupId>
+    <artifactId>spark-cloudant</artifactId>
+    <version>2.0.0-s_2.11</version>
+</dependency>
+
   </dependencies>
 
   <build>
